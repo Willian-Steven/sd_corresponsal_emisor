@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 29/03/2020 10:52:32 PM by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="co.edu.campusucc.sd.modelo.Giro" optimistic-lock="version" polymorphism="implicit" schema="public" select-before-update="false" table="giro">
+        <id name="idGiro" type="string">
+            <column length="3" name="id_giro"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="co.edu.campusucc.sd.modelo.Administrador" embed-xml="true" fetch="select" insert="true" name="administrador" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="3" name="id_administrador"/>
+        </many-to-one>
+        <many-to-one class="co.edu.campusucc.sd.modelo.Cliente" embed-xml="true" fetch="select" insert="true" name="cliente" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="50" name="id_cliente"/>
+        </many-to-one>
+        <many-to-one class="co.edu.campusucc.sd.modelo.Empleados" embed-xml="true" fetch="select" insert="true" name="empleados" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="3" name="id_empleado"/>
+        </many-to-one>
+        <many-to-one class="co.edu.campusucc.sd.modelo.Pais" embed-xml="true" fetch="select" insert="true" name="pais" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="3" name="id_pais_origen"/>
+        </many-to-one>
+        <many-to-one class="co.edu.campusucc.sd.modelo.Sede" embed-xml="true" fetch="select" insert="true" name="sede" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="3" name="id_sede"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="idReporte" optimistic-lock="true" type="string" unique="false">
+            <column length="3" name="id_reporte"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 29/03/2020 10:52:32 PM by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="co.edu.campusucc.sd.modelo.Giros" optimistic-lock="version" polymorphism="implicit" schema="public" select-before-update="false" table="giros">
+        <composite-id class="co.edu.campusucc.sd.modelo.GirosId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="idGiros" type="string">
+                <column length="3" name="id_giros"/>
+            </key-property>
+            <key-property name="idCliente" type="string">
+                <column length="50" name="id_cliente"/>
+            </key-property>
+            <key-property name="idSede" type="string">
+                <column length="3" name="id_sede"/>
+            </key-property>
+            <key-property name="idReporte" type="string">
+                <column length="3" name="id_reporte"/>
+            </key-property>
+            <key-property name="idAdministrador" type="string">
+                <column length="3" name="id_administrador"/>
+            </key-property>
+        </composite-id>
+        <many-to-one class="co.edu.campusucc.sd.modelo.Administrador" embed-xml="true" fetch="select" insert="false" name="administrador" not-found="exception" optimistic-lock="true" unique="false" update="false">
+            <column length="3" name="id_administrador"/>
+        </many-to-one>
+        <many-to-one class="co.edu.campusucc.sd.modelo.Cliente" embed-xml="true" fetch="select" insert="false" name="cliente" not-found="exception" optimistic-lock="true" unique="false" update="false">
+            <column length="50" name="id_cliente"/>
+        </many-to-one>
+        <many-to-one class="co.edu.campusucc.sd.modelo.Sede" embed-xml="true" fetch="select" insert="false" name="sede" not-found="exception" optimistic-lock="true" unique="false" update="false">
+            <column length="3" name="id_sede"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
